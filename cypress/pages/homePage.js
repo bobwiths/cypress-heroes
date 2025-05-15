@@ -11,7 +11,8 @@ class HomePage{
             signInButton: "button.w-full",
             createNewHero: 'a > .undefined',
             logoutButton: 'li > .undefined',
-            wrongCredentialMessage: '.text-red-500'
+            wrongCredentialMessage: '.text-red-500',
+            fieldRequired: '.text-red-500'
         }
 
         return selectors
@@ -48,6 +49,13 @@ class HomePage{
         cy.get(this.selectorsList().passwordField).type(password)
         cy.get(this.selectorsList().signInButton).click()
         cy.get(this.selectorsList().wrongCredentialMessage)
+    }
+    loginUserEmpty(email, password){
+        cy.get(this.selectorsList().loginButton).click()
+        cy.get(this.selectorsList().signInButton).click({force: true})
+        cy.get(this.selectorsList().fieldRequired).eq(0)
+        cy.get(this.selectorsList().fieldRequired).eq(1)
+
     }
 }
 

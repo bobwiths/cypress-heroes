@@ -32,6 +32,10 @@ describe('Login Tests', () => {
     homePage.accessHomePage()
     homePage.loginUserFail(userData.userFail.email, userData.userFail.password)
   })
+  it.only('Login Empty - Fail', () => {
+    homePage.accessHomePage()
+    homePage.loginUserEmpty()
+  })
    it('Like Admin Logged - Success', () => {
     homePage.accessHomePage()
     homePage.loginUserSuccess(userData.userAdminSuccess.email, userData.userAdminSuccess.password)
