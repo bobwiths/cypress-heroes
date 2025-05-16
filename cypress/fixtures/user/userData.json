@@ -14,6 +14,13 @@
     "userFail": {
         "email": "test@test.com",
         "password": "test1234"
+    },
+    "newHero": {
+        "nameHero": "Super Bob",
+        "priceHero": "99",
+        "fansHero": "2",
+        "savesHero": "1"
     }
+
     
 }

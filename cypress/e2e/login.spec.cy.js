@@ -32,7 +32,7 @@ describe('Login Tests', () => {
     homePage.accessHomePage()
     homePage.loginUserFail(userData.userFail.email, userData.userFail.password)
   })
-  it.only('Login Empty - Fail', () => {
+  it('Login Empty - Fail', () => {
     homePage.accessHomePage()
     homePage.loginUserEmpty()
   })
@@ -61,5 +61,13 @@ describe('Login Tests', () => {
   it('Create New Hero - Success', () => {
     homePage.accessHomePage()
     homePage.loginUserSuccess(userData.userAdminSuccess.email, userData.userAdminSuccess.password)
+    createHeroPage.accessNewHeroPage()
+    createHeroPage.createNewHero(userData.newHero.nameHero, userData.newHero.priceHero, userData.newHero.fansHero, userData.newHero.savesHero)
+  })
+  it.only('Create New Hero and Logout before Submit', () => {
+    homePage.accessHomePage()
+    homePage.loginUserSuccess(userData.userAdminSuccess.email, userData.userAdminSuccess.password)
+    createHeroPage.accessNewHeroPage()
+    createHeroPage.createNewHeroError(userData.newHero.nameHero, userData.newHero.priceHero, userData.newHero.fansHero, userData.newHero.savesHero)
   })
 })
